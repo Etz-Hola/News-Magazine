@@ -54,10 +54,10 @@ newsRouter.get('/:id', async(req, res) => {
 
 
 newsRouter.post('', async(req, res) => {
-    let articleID = req.params.id
+    let search = req.body.search
 
     try {
-        const newsApi = await axios.get(`https://raddy.dev/wp-json/wp/v2/posts/${articleID}`);
+        const newsApi = await axios.get(`https://raddy.dev/wp-json/wp/v2/posts?search=${search}`);
         res.render('newsSingle', { article: newsApi.data })
 
     } catch (error) {
