@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Cormorant Garamond", sans-serif;
   background-color: #f6f6f6;
 }
 
@@ -56,5 +56,5 @@ h2 {
   background-color: #fff;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem; 
 }/*# sourceMappingURL=style.css.map */
