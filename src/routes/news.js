@@ -58,20 +58,20 @@ newsRouter.post('', async(req, res) => {
 
     try {
         const newsApi = await axios.get(`https://raddy.dev/wp-json/wp/v2/posts?search=${search}`);
-        res.render('newsSingle', { article: newsApi.data })
+        res.render('newsSearch', { articles: newsApi.data })
 
     } catch (error) {
 
         if(error.response) {
-            res.render('newsSingle', { article: null })
+            res.render('newsSearch', { articles: null })
             console.log(error.response.data)
             console.log(error.response.headers)
             console.log(error.response.status)            
         } else if(error.request) {
-            res.render('newsSingle', { article: null  })
+            res.render('newsSearch', { articles: null  })
             console.log(error.request);
         } else {
-            res.render('newsSingle', { article: null})
+            res.render('newsSearch', { articles: null})
             console.error("Error", error.message)
         }
 
